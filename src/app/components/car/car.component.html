@@ -7,7 +7,6 @@
 <table *ngIf="dataLoaded == true" class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Marka</th>
             <th>Renk</th>
             <th>Yıl</th>
@@ -16,8 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let car of cars">
-            <td>{{car.carId}}</td>
+        <tr (click)="setCurrentCar(car)" routerLink="/detailcar/{{car.carId}}" *ngFor="let car of cars">
             <td>{{car.brandName}}</td>
             <td>{{car.colorName}}</td>
             <td>{{car.modelYear}}</td>

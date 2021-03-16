@@ -1,0 +1,21 @@
+<div class="row">
+  <a href="#" class="btn btn-info mb-2">Ana Sayfa</a>
+    <div *ngFor="let c of car" class="card col-4">
+        <div class="card-body">
+            <h4 class="card-title">Araç Bilgileri</h4>
+            <p>Marka : <b>{{c.brandName}}</b></p>
+            <p>Model : <b>{{c.description}}</b></p>
+            <p>Yılı : <b>{{c.modelYear}}</b></p>
+            <p>Renk : <b>{{c.colorName}}</b></p>
+            <p>Kira Bedeli : <b>{{c.dailyPrice}} TL</b></p>
+        </div>
+    </div>
+
+    <div *ngFor="let i of carImage" class="col-8">
+      <img style="border-color: black; border: 1px;border-style: solid;" 
+      [src]="updateUrl(i.imagePath)" alt="carimage">
+    </div>
+</div>
+
+<!-- src="https://as2.ftcdn.net/jpg/00/53/45/31/500_F_53453175_hVgYVz0WmvOXPd9CNzaUcwcibiGao3CL.jpg" -->
+
