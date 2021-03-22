@@ -4,7 +4,11 @@
     </div>
 </div>
 
+<div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control mt-1" id="colorFilterText" placeholder="Renk giriniz.">
+</div>
+
 <ul *ngIf="dataLoaded == true" class="list-group">
     <li class="list-group-item bg-warning">Renkler</li>
-    <li (click)="getCurrentColor(color)" routerLink="/cars/color/{{color.colorId}}" *ngFor="let color of colors" [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
+    <li (click)="getCurrentColor(color)" routerLink="/cars/color/{{color.colorId}}" *ngFor="let color of colors | colorFilterPipe:filterText" [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
 </ul>

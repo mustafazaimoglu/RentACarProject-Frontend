@@ -4,6 +4,22 @@
     </div>
 </div>
 
+<div>
+    <form (ngSubmit)="getCarsFiltered()" style="display: flex;">
+        <select id="forbrand" [(ngModel)]="selectedBrand" [ngModelOptions]="{standalone: true}" class="form-select m-1" aria-label="Default select example">
+            <option selected disabled [ngValue]="0">Marka Seçiniz</option>
+            <option *ngFor="let br of brands" [ngValue]="br.brandId">{{br.brandName}}</option>
+        </select>
+
+        <select id="forcolor" [(ngModel)]="selectedColor" [ngModelOptions]="{standalone: true}" class="form-select m-1" aria-label="Default select example">
+            <option selected disabled [ngValue]="0">Renk Seçiniz</option>
+            <option *ngFor="let cl of colors" [ngValue]="cl.colorId">{{cl.colorName}}</option>
+        </select>
+
+        <button type="submit" class="btn btn-info m-1">Filterele</button>
+    </form>
+</div>
+
 <table *ngIf="dataLoaded == true" class="table table-striped">
     <thead>
         <tr>
@@ -16,10 +32,10 @@
     </thead>
     <tbody>
         <tr (click)="setCurrentCar(car)" routerLink="/detailcar/{{car.carId}}" *ngFor="let car of cars">
-            <td>{{car.brandName}}</td>
+            <td>{{car.brandName | uppercase}}</td>
             <td>{{car.colorName}}</td>
             <td>{{car.modelYear}}</td>
-            <td>{{car.dailyPrice}}</td>
+            <td>{{car.dailyPrice | currency:"₺"}}</td>
             <td>{{car.description}}</td>
         </tr>
     </tbody>

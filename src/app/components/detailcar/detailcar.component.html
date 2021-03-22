@@ -8,14 +8,24 @@
             <p>Yılı : <b>{{c.modelYear}}</b></p>
             <p>Renk : <b>{{c.colorName}}</b></p>
             <p>Kira Bedeli : <b>{{c.dailyPrice}} TL</b></p>
+
+            <div class="text-center">
+              <button class="btn btn-success">
+                Kirala
+              </button>
+            </div>
+            
         </div>
     </div>
-
+ 
     <div *ngFor="let i of carImage" class="col-8">
       <img style="border-color: black; border: 1px;border-style: solid;" 
       [src]="updateUrl(i.imagePath)" alt="carimage">
+      <img style="border-color: black; border: 1px;border-style: solid;" 
+      src="https://as2.ftcdn.net/jpg/00/53/45/31/500_F_53453175_hVgYVz0WmvOXPd9CNzaUcwcibiGao3CL.jpg" alt="carimage">
+      
+
     </div>
 </div>
 
-<!-- src="https://as2.ftcdn.net/jpg/00/53/45/31/500_F_53453175_hVgYVz0WmvOXPd9CNzaUcwcibiGao3CL.jpg" -->
 

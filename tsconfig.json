@@ -8,6 +8,7 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "strictNullChecks": false,
     "strictPropertyInitialization": false,
     "moduleResolution": "node",
     "importHelpers": true,

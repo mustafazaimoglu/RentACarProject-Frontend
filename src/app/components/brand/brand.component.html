@@ -1,6 +1,10 @@
+<div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control mt-1" id="brandFilterText" placeholder="Marka giriniz.">
+</div>
+
 <ul class="list-group">
     <li class="list-group-item bg-warning">Markalar</li>
-    <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}" *ngFor="let brand of brands" [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
+    <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}" *ngFor="let brand of brands | brandFilterPipe:filterText" [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
 </ul>
 
 <h5 *ngIf="currentBrand">Seçiminiz : {{currentBrand.brandName}}</h5>
