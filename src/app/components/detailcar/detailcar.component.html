@@ -1,18 +1,16 @@
-<div class="row">
+<div *ngIf="dataLoaded" class="row">
   <a href="#" class="btn btn-info mb-2">Ana Sayfa</a>
-    <div *ngFor="let c of car" class="card col-4">
+    <div class="card col-4">
         <div class="card-body">
             <h4 class="card-title">Araç Bilgileri</h4>
-            <p>Marka : <b>{{c.brandName}}</b></p>
-            <p>Model : <b>{{c.description}}</b></p>
-            <p>Yılı : <b>{{c.modelYear}}</b></p>
-            <p>Renk : <b>{{c.colorName}}</b></p>
-            <p>Kira Bedeli : <b>{{c.dailyPrice}} TL</b></p>
-
-            <div class="text-center">
-              <button class="btn btn-success">
-                Kirala
-              </button>
+            <p>Marka : <b>{{car.brandName}}</b></p>
+            <p>Model : <b>{{car.description}}</b></p>
+            <p>Yılı : <b>{{car.modelYear}}</b></p>
+            <p>Renk : <b>{{car.colorName}}</b></p>
+            <p>Kira Bedeli : <b>{{car.dailyPrice}} TL</b></p>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-success">Kirala</button>
+              <button class="btn btn-warning" routerLink="/car/update/{{car.carId}}">Düzenle</button>
             </div>
             
         </div>

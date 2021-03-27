@@ -4,7 +4,14 @@
 
 <ul class="list-group">
     <li class="list-group-item bg-warning">Markalar</li>
-    <li (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}" *ngFor="let brand of brands | brandFilterPipe:filterText" [class]="getCurrentBrandClass(brand)">{{brand.brandName}}</li>
+    <li  *ngFor="let brand of brands | brandFilterPipe:filterText" [class]="getCurrentBrandClass(brand)">
+        <button class="btn px-2" (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}">
+            {{brand.brandName}}
+        </button>
+        <button class="btn btn-danger" routerLink="brand/update/{{brand.brandId}}">
+            U
+        </button>
+    </li>
 </ul>
 
 <h5 *ngIf="currentBrand">Seçiminiz : {{currentBrand.brandName}}</h5>

@@ -10,5 +10,13 @@
 
 <ul *ngIf="dataLoaded == true" class="list-group">
     <li class="list-group-item bg-warning">Renkler</li>
-    <li (click)="getCurrentColor(color)" routerLink="/cars/color/{{color.colorId}}" *ngFor="let color of colors | colorFilterPipe:filterText" [class]="getCurrentColorClass(color)">{{color.colorName}}</li>
+    <li *ngFor="let color of colors | colorFilterPipe:filterText" [class]="getCurrentColorClass(color)">
+        <button class="btn" (click)="getCurrentColor(color)" routerLink="/cars/color/{{color.colorId}}">
+            {{color.colorName}}
+
+        </button>
+        <button class="btn btn-danger" routerLink="color/update/{{color.colorId}}">
+            U
+        </button>
+    </li>
 </ul>

@@ -36,11 +36,11 @@ export class ColorComponent implements OnInit {
   {
     if(color == this.currentColor)
     {
-      return "list-group-item active"
+      return "d-flex justify-content-between list-group-item active"
     }
     else
     {
-      return "list-group-item";
+      return "d-flex justify-content-between list-group-item";
     }
   }
 

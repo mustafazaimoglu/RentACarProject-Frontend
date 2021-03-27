@@ -12,7 +12,7 @@ import { DetailcarService } from 'src/app/services/detailcar.service';
 })
 export class DetailcarComponent implements OnInit {
 
-  car: Car[];
+  car: Car = null;
   carImage: CarImage[];
   dataLoaded = false
 
